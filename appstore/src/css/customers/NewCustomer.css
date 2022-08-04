@@ -1,0 +1,24 @@
+.new-customer {
+  border: solid 2px black;
+  padding: 20%;
+}
+
+.customer-title {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.close-buying-customer {
+  padding: 2px 8px;
+  font-size: 13px;
+  border-radius: 10%;
+  float: right;
+  margin-top: -50%;
+  margin-right: -20%;
+}
+
+.btn-new-customer {
+  float: left;
+  margin-left: 45%;
+  margin-top: 10%;
+}

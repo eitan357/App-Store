@@ -1,0 +1,36 @@
+.buy-product-title {
+  font-size: 16px;
+  margin-top: 15%;
+  margin-bottom: -10%;
+}
+
+.close-buy-product {
+  /* flex: 1; */
+  margin: 5%;
+  margin-top: 20%;
+  /* margin-left: 80%; */
+  border: 5%;
+  /* margin-right: 50%; */
+}
+
+.buy-product {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  /* margin-top: 20%; */
+}
+
+.form_buy-product {
+  margin-top: -15%;
+  margin-left: 30%;
+  align-self: center;
+  flex: 1;
+}
+
+.buy-btn {
+  flex: 2;
+  margin: 5%;
+  margin-left: 20%;
+  /* margin-left: 35%; */
+}

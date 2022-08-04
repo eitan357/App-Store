@@ -1,0 +1,27 @@
+.home-page {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+}
+
+.shop-title {
+  text-align: center;
+  flex: 100%;
+  align-self: center;
+}
+
+img {
+  margin-top: 7px;
+  flex: 1;
+  border: solid 2px #008cba;
+  border-radius: 10%;
+  width: 25px;
+}
+img:hover {
+  border-color: #002c3a;
+}
+
+body {
+  background: rgb(251, 255, 243);
+  background-blend-mode: lighten;
+}
