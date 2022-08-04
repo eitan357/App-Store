@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Routes, Route, useNavigate, Link } from "react-router-dom";
+import { Routes, Route, useNavigate, Link, Navigate } from "react-router-dom";
 import "../css/Home.css";
 
 import { getAllData } from "../utils/fatchDataBL";
@@ -76,6 +76,7 @@ const HomeComp = () => {
           element={<EditProductComp />}
         />
         <Route path="/purchases" element={<PurchasesPageComp />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
