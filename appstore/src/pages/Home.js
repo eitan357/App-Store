@@ -16,7 +16,6 @@ import ProductsPageComp from "./products/ProductsPage";
 import PurchasesPageComp from "./PurchasesPage";
 
 const HomeComp = () => {
-  const navigation = useNavigate();
   const dispatch = useDispatch();
   const [error, setError] = useState();
 
