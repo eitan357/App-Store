@@ -28,7 +28,15 @@ const ProductsPageComp = () => {
   let calculateOneProduct = function (data) {
     return (
       data.length > 0 &&
-      data.reduce((acc, purchase) => acc + purchase.purchases[0].quantity, 0)
+      data.reduce(
+        (acc, purchase) =>
+          acc +
+          purchase.purchases.reduce(
+            (acc, purchase) => acc + purchase.quantity,
+            0
+          ),
+        0
+      )
     );
   };
 
@@ -38,7 +46,12 @@ const ProductsPageComp = () => {
       pageData
         .map((data) =>
           data.customerAndPurchase.reduce(
-            (acc, purchase) => acc + purchase.purchases[0].quantity,
+            (acc, purchase) =>
+              acc +
+              purchase.purchases.reduce(
+                (acc, purchase) => acc + purchase.quantity,
+                0
+              ),
             0
           )
         )

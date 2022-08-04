@@ -89,7 +89,7 @@ const EditProductComp = () => {
           Price:{" "}
           <input
             type="number"
-            value={pageData?.product?.price || ""}
+            value={pageData?.product?.price || 0}
             min={0}
             name={"price"}
             onChange={(e) => changeData(e, "price")}
@@ -98,7 +98,7 @@ const EditProductComp = () => {
           Quantity:{" "}
           <input
             type="number"
-            value={pageData?.product?.quantity || ""}
+            value={pageData?.product?.quantity || 0}
             min={0}
             name={"quantity"}
             onChange={(e) => changeData(e, "quantity")}
