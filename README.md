@@ -8,7 +8,7 @@ It contains three main parts:
 1. React - In this section there are several different modules that are in use:
   • The first is SPA (Single Page App) - gives the possibility to receive all the information found in the application as soon as the first page is loaded, thereby           reducing the time it takes to switch between different pages in the application.
 
-  • The second is Redux - built by a reducer (located in the /appstore/src/functions folder), which receives all the information during operation in the components and       sends it back to all the pages in an updated form. Allows for faster loading of the information and shortens the time you have to wait for the API server.
+  • The second is Redux - built by a reducer (located in the '/appstore/src/functions' folder), which receives all the information during operation in the components and       sends it back to all the pages in an updated form. Allows for faster loading of the information and shortens the time you have to wait for the API server.
 
   • In addition, the React part is built with a detailed and easy-to-understand component division.
 
