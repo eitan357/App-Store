@@ -13,8 +13,6 @@
 .form-purchases-page {
   display: flex;
   margin: -2% 20% 0% 20%;
-  /* box-sizing: content-box; */
-  /* justify-content: center; */
 }
 
 .title-search {
@@ -22,11 +20,8 @@
   font-size: 15px;
   margin: 5px;
   justify-content: space-evenly;
-  /* text-align: center; */
-  /* align-self: center; */
 }
 .input-search {
-  /* size: 10px; */
   padding: 5px 30px;
   font-size: 14px;
   margin: 5px;
@@ -41,12 +36,18 @@
   border-radius: 10px;
 }
 
-.found-purchas {
-  margin-right: 150px;
+.found-purchases {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  width: 500px;
-  height: 400px;
-  align-content: space-between;
+  flex-direction: row;
+  margin-left: 9%;
+}
+
+.found-purchase {
+  border: #457fdc;
+  width: 350px;
+  height: 90px;
+  text-align: center;
+  margin: 15px;
+  background: #f1f9ff;
 }

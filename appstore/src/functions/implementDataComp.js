@@ -123,7 +123,6 @@ let searchPurchases = function (e, search, stateData) {
   let searchCustomer = search.customer ? search.customer : "";
   let searchProduct = search.product ? search.product : "";
   let searchDate = search.date ? new Date(search.date).toDateString() : "";
-  console.log(stateData);
   return () =>
     stateData
       .map((purchase) => {

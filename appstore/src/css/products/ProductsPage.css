@@ -29,14 +29,11 @@
   flex: 1;
 
   margin-left: 18%;
-  /* margin-right: 20%; */
 }
 
 .page-new_product {
   flex: 2;
   margin-top: 7%;
-  /* margin-right: 5%; */
-  /* margin-left: -10%; */
 }
 
 .calculation {

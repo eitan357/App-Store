@@ -94,22 +94,15 @@ const PurchasesPageComp = () => {
         </form>
         <br />
         {pageData.length == 0 && <h4>The requested purchase does not exist</h4>}
-        <div className={"found-purchas"}>
+        <div className={"found-purchases"}>
           {pageData.length > 0 &&
             pageData.map((purchases, index) => {
               let purchase = purchases.purchase;
               let customer = purchases.customer;
               let product = purchases.product;
               return (
-                <div key={purchase._id} style={{ margin: "3%" }}>
-                  <table
-                    border={"1px"}
-                    style={{
-                      border: "none",
-                      textAlign: "center",
-                      verticalAlign: "middle",
-                    }}
-                  >
+                <div key={purchase._id}>
+                  <table border={"1px"} className={"found-purchase"}>
                     <thead>
                       <tr>
                         <th colSpan={5}>Purchase Num.{index + 1}</th>
