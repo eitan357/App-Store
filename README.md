@@ -1,6 +1,10 @@
 # App-Store
 This app is a demo for a store with lists of buyers, products and purchases.
-It contains three main parts:
+
+The application allows you to add, edit and delete customers, products or purchases.
+And you can search for purchases according to certain conditions.
+
+The app contains three main parts:
 1. App Store - Based on React. Allows information to be used on the client side by intent pages that come from components.
 2. API - Based on Node. Allows to receive and send the information to the database.
 3. Database - form MongoDB Atlas.
