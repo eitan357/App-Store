@@ -17,9 +17,9 @@ The app contains three main parts:
 
     • In addition, the React part is built with a detailed and easy-to-understand component               division.
 
-2. API / Node - in this part the information is processed before sending information to the database and vice versa.
+2. API / Node - in this part the information is processed before sending information to the        database and vice versa.
 
-It is built by different layers (such as BL, DAL, Router, Model, etc.) that give the possibility of reading and controlling what is happening in the process.
+   It is built by different layers (such as BL, DAL, Router, Model, etc.) that give the            possibility of reading and controlling what is happening in the process.
 
 3. Database - The use of MongoDB Atlas gives a more convenient and faster possibility to use the    database, and also provides a convenient infrastructure to upload the application to a          domain.
 
