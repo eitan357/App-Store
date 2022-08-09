@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { createStore } from "redux";
-import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import reducer from "./functions/reducer";
 import { BrowserRouter } from "react-router-dom";
