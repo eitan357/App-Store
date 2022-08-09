@@ -8,7 +8,7 @@ import {
 } from "../../functions/changeDataInComp";
 import { createData } from "../../utils/fatchDataBL";
 
-const BuyProductComp = () => {
+const BuyProductComp = (props) => {
   const params = useParams();
   const navigation = useNavigate();
   const dispatch = useDispatch();
@@ -17,7 +17,11 @@ const BuyProductComp = () => {
   const [productId, setProductId] = useState(0);
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
-  const [error, setError] = useState(false);
+
+  //check if the path is erroneous
+  useEffect(() => {
+    params.name !== props.customer.name && navigation("/customers");
+  }, [params]);
 
   //get the choosed product data
   useEffect(() => {
@@ -46,7 +50,7 @@ const BuyProductComp = () => {
       quantity: product.quantity - quantity,
     };
     let obj = {
-      customerId: params.id,
+      customerId: props.customer.id,
       productId,
       date: new Date(),
       quantity,
@@ -58,19 +62,11 @@ const BuyProductComp = () => {
     updateProductFun(e, dispatch, changeQuantity);
   };
 
-  //check if the path is erroneous
-  useEffect(
-    () =>
-      setError(
-        JSON.parse(sessionStorage[params.name + params.id] ? false : true)
-      ),
-    [params]
-  );
-  if (error) return <h4>⛔The path does not exist⛔</h4>;
-
   return (
     <div>
-      <h4 className={"buy-product-title"}>{`Buy Product - ${params.name}`} </h4>
+      <h4 className={"buy-product-title"}>
+        {`Buy Product - ${props?.customer?.name}`}
+      </h4>
 
       <button
         className={"close-buy-product"}

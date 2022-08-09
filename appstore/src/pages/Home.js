@@ -59,7 +59,7 @@ const HomeComp = () => {
       <Routes>
         <Route path="/" element={<MenuComp />} />
         <Route path="/customers" element={<CustomersPageComp />}>
-          <Route path="buyProduct/:id/:name" element={<BuyProductComp />} />
+          <Route path="buyProduct/:name" element={<BuyProductComp />} />
           <Route path="addNewCustomer" element={<AddnewCustomer />} />
         </Route>
         <Route
@@ -67,7 +67,7 @@ const HomeComp = () => {
           element={<EditCustomerComp />}
         />
         <Route path="/products" element={<ProductsPageComp />}>
-          <Route path=":id/:name" element={<AddCustomerComp />} />
+          <Route path=":name" element={<AddCustomerComp />} />
           <Route path="addNewProduct" element={<AddNewProduct />} />
         </Route>
         <Route

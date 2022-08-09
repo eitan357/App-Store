@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { getProductsData } from "../../functions/implementDataComp";
 import "../../css/products/ProductsPage.css";
+import AddCustomerComp from "./AddCustomer";
 
 const ProductsPageComp = () => {
   const storeData = useSelector((state) => state);
@@ -60,16 +61,11 @@ const ProductsPageComp = () => {
   };
 
   //send data to BuyProduct to check if the path is erroneous
-  let pathCheck = function (id, name) {
-    sessionStorage[name + id] = JSON.stringify({
-      customerId: id,
-      customerName: name,
-    });
+  let pathCheck = function (name) {
     let path =
-      window.location.pathname.replaceAll("%20", " ") ===
-      `/products/${id}/${name}`
+      window.location.pathname.replaceAll("%20", " ") === `/products/${name}`
         ? "/products"
-        : `/products/${id}/${name}`;
+        : `/products/${name}`;
     navigation(path);
   };
 
@@ -179,14 +175,16 @@ const ProductsPageComp = () => {
                       <dd>
                         <button
                           className={"btn-addCustomer"}
-                          onClick={() => pathCheck(id, name)}
+                          onClick={() => pathCheck(name)}
                         >
                           Add Customer
                         </button>
                       </dd>
                       <dd>
                         {window.location.pathname.replaceAll("%20", " ") ===
-                          `/products/${id}/${name}` && <Outlet />}
+                          `/products/${name}` && (
+                          <AddCustomerComp product={{ id, name }} />
+                        )}
                       </dd>
                     </ul>
                   </ul>

@@ -8,7 +8,7 @@ import {
 } from "../../functions/changeDataInComp";
 import { createData } from "../../utils/fatchDataBL";
 
-const AddCustomerComp = () => {
+const AddCustomerComp = (props) => {
   const navigation = useNavigate();
   const params = useParams();
   const dispatch = useDispatch();
@@ -17,11 +17,12 @@ const AddCustomerComp = () => {
   const [customerId, setCustomerId] = useState("");
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
-    setProduct(storeData.products.find((prdouct) => prdouct._id === params.id));
-  }, [params]);
+    setProduct(
+      storeData.products.find((prdouct) => prdouct._id === props.product.id)
+    );
+  }, [props]);
 
   //add customer to the list
   let addCustomer = async function (e) {
@@ -39,7 +40,7 @@ const AddCustomerComp = () => {
     };
     let obj = {
       customerId,
-      productId: params.id,
+      productId: props.product.id,
       date: new Date(),
       quantity,
     };
@@ -49,16 +50,6 @@ const AddCustomerComp = () => {
     addPurchaseFun(e, dispatch, { ...obj, _id });
     updateProductFun(e, dispatch, changeQuantity);
   };
-
-  //check if the path is erroneous
-  useEffect(
-    () =>
-      setError(
-        JSON.parse(sessionStorage[params.name + params.id] ? false : true)
-      ),
-    [params]
-  );
-  if (error) return <h4>⛔The path does not exist⛔</h4>;
 
   return (
     <div className="add-customer">

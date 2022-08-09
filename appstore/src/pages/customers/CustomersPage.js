@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import "../../css/customers/CustomersPage.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { getCustomersData } from "../../functions/implementDataComp";
+import BuyProductComp from "./BuyProduct";
 
 const CustomersPageComp = () => {
   const navigation = useNavigate();
   const storeData = useSelector((state) => state);
   const [pageData, setPageData] = useState([]);
+  const [customerData, setCustomerData] = useState({});
   const [error, setError] = useState(false);
 
   //Organizes all the information to the page
@@ -26,17 +28,13 @@ const CustomersPageComp = () => {
   }, [storeData]);
 
   //send data to BuyProduct to check if the path is erroneous
-  let pathCheck = function (id, firstName, lastName) {
-    let fullName = `${firstName} ${lastName}`;
-    sessionStorage[fullName + id] = JSON.stringify({
-      customerId: id,
-      customerName: fullName,
-    });
-    let path = `/customers/buyProduct/${id}`;
+  let pathCheck = function (id, name) {
+    setCustomerData({ id, name });
+    let path = `/customers/buyProduct`;
     navigation(
-      window.location.pathname.replaceAll("%20", " ") === `${path}/${fullName}`
+      window.location.pathname.replaceAll("%20", " ") === `${path}/${name}`
         ? "/customers"
-        : `${path}/${fullName}`
+        : `${path}/${name}`
     );
   };
 
@@ -128,11 +126,7 @@ const CustomersPageComp = () => {
                     <td>{quantity && `x${quantity}`}</td>
                     <td>{data.productAndPurchase[0]?.purchase.date}</td>
                     <td rowSpan={rowNum}>
-                      <button
-                        onClick={() =>
-                          pathCheck(id, customer.firstName, customer.lastName)
-                        }
-                      >
+                      <button onClick={() => pathCheck(id, fullName)}>
                         Buy broduct
                       </button>
                     </td>
@@ -158,9 +152,10 @@ const CustomersPageComp = () => {
             })}
           </table>
           <div className={"buy-product"}>
-            {window.location.pathname === "/customers/addNewCustomer" || (
-              <Outlet />
-            )}
+            {window.location.pathname === "/customers/addNewCustomer" ||
+              window.location.pathname === "/customers" || (
+                <BuyProductComp customer={customerData} />
+              )}
           </div>
         </div>
       </div>
