@@ -1,4 +1,5 @@
 # App-Store
+Full Stack project
 
 This app is a demo for a store with lists of buyers, products and purchases.
 
