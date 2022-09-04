@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Routes, Route, useNavigate, Link, Navigate } from "react-router-dom";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 import "../css/Home.css";
 
 import { getAllData } from "../utils/fatchDataBL";

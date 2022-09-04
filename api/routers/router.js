@@ -1,26 +1,37 @@
-const { json } = require("express");
 const express = require("express");
 const internetStoreBL = require("../BLs/internetStoreBL");
-const purchasesModule = require("../models/purchasesModule");
+
 const router = express.Router();
+
+let collection;
+const setCollection = function (req, res, next) {
+  if (req.originalUrl === "/api/customers")
+    collection = require("../models/customersModule");
+  if (req.originalUrl === "/api/products")
+    collection = require("../models/productsModule");
+  if (req.originalUrl === "/api/purchases")
+    collection = require("../models/purchasesModule");
+  next();
+};
+router.use(setCollection);
 
 //getAllData
 router.get("/", async (req, res, next) => {
-  let status = await internetStoreBL.getAllData(purchasesModule);
+  let status = await internetStoreBL.getAllData(collection);
   return res.json(status);
 });
 
 //getOneData
 router.get("/:id", async (req, res, next) => {
   let id = req.params.id;
-  let status = await internetStoreBL.getOneData(purchasesModule, id);
+  let status = await internetStoreBL.getOneData(collection, id);
   return res.json(status);
 });
 
 //createData
 router.post("/", async (req, res, next) => {
   let obj = req.body;
-  let status = await internetStoreBL.createData(purchasesModule, obj);
+  let status = await internetStoreBL.createData(collection, obj);
   return res.json(status);
 });
 
@@ -28,7 +39,7 @@ router.post("/", async (req, res, next) => {
 router.put("/:id", async (req, res, next) => {
   let id = req.params.id;
   let obj = req.body;
-  let status = await internetStoreBL.updateData(purchasesModule, id, obj);
+  let status = await internetStoreBL.updateData(collection, id, obj);
   return res.json(status);
 });
 
@@ -36,7 +47,7 @@ router.put("/:id", async (req, res, next) => {
 router.delete("/:id", async (req, res, next) => {
   let id = req.params.id;
   let deleteBy = req.body.deleteBy;
-  let status = await internetStoreBL.deleteData(purchasesModule, id, deleteBy);
+  let status = await internetStoreBL.deleteData(collection, id, deleteBy);
   return res.json(status);
 });
 

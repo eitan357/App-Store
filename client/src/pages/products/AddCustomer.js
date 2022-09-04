@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../css/products/AddCustomer.css";
 import {
   addPurchaseFun,
@@ -10,7 +10,6 @@ import { createData } from "../../utils/fatchDataBL";
 
 const AddCustomerComp = (props) => {
   const navigation = useNavigate();
-  const params = useParams();
   const dispatch = useDispatch();
   const storeData = useSelector((state) => state);
 
