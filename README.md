@@ -1,5 +1,8 @@
 # App-Store
+
 Full Stack project
+
+--The client folder is located in the api folder. Because it is necessary to upload to heroku--
 
 This app is a demo for a store with lists of buyers, products and purchases.
 
@@ -12,7 +15,7 @@ The app contains three main parts:
 2. API - Based on Node. Allows to receive and send the information to the database.
 3. Database - form MongoDB Atlas.
 
-1. React - In this section there are several different modules that are in use:
+4. React - In this section there are several different modules that are in use:
 
    • The first is SPA (Single Page App) - gives the possibility to receive all the information which is inside the application as soon as the first page is loaded, thereby reducing the time it takes to switch between different pages in the application.
 
@@ -20,8 +23,8 @@ The app contains three main parts:
 
    • In addition, the React part is built with a detailed and easy-to-understand component division.
 
-2. API / Node - in this part the information is processed before sending information to the database and vice versa.
+5. API / Node - in this part the information is processed before sending information to the database and vice versa.
 
    It is built by different layers (such as BL, DAL, Router, Model, etc.) that give the possibility of reading and controlling what is happening in the process.
 
-3. Database - The use of MongoDB Atlas gives a more convenient and faster possibility to use the database, and also provides a convenient infrastructure to upload the application to a domain.
+6. Database - The use of MongoDB Atlas gives a more convenient and faster possibility to use the database, and also provides a convenient infrastructure to upload the application to a domain.
