@@ -2,33 +2,28 @@ import axios from "axios";
 
 //to Heroku url (didnt work with create function):
 //`https://apireactproject2022.herokuapp.com/api/${collection}`
+const url = "https://eitan-app-store.herokuapp.com/api/";
 
 const getAll = function (collection) {
-  return axios.get(`https://eitan-app-store.herokuapp.com/${collection}`);
+  return axios.get(url + collection);
 };
 
 const getOne = function (collection, id) {
-  return axios.get(`https://eitan-app-store.herokuapp.com/${collection}/` + id);
+  return axios.get(url + collection + "/" + id);
 };
 
 const create = function (collection, obj) {
-  return axios.post(`https://eitan-app-store.herokuapp.com/${collection}`, obj);
+  return axios.post(url + collection, obj);
 };
 
 const update = function (collection, id, obj) {
-  return axios.put(
-    `https://eitan-app-store.herokuapp.com/${collection}/` + id,
-    obj
-  );
+  return axios.put(url + collection + "/" + id, obj);
 };
 
 const deleteItems = function (collection, id, deleteBy) {
-  return axios.delete(
-    `https://eitan-app-store.herokuapp.com/${collection}/` + id,
-    {
-      data: { deleteBy: deleteBy },
-    }
-  );
+  return axios.delete(url + collection + "/" + id, {
+    data: { deleteBy: deleteBy },
+  });
 };
 
 export { getAll, getOne, create, update, deleteItems };
