@@ -2,6 +2,8 @@
 
 Full Stack project
 
+Link for the app: https://eitan-app-store.herokuapp.com/
+
 --The client folder is located in the api folder. Because it is necessary to upload to heroku--
 
 This app is a demo for a store with lists of buyers, products and purchases.
