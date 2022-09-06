@@ -106,6 +106,7 @@ const CustomersPageComp = () => {
             {pageData.map((data) => {
               let customer = data.customer;
               let id = customer._id;
+              let firstProduct = data.productAndPurchase[0]?.product;
               let rowNum = data.productAndPurchase.length;
               let quantity = data.productAndPurchase[0]?.purchase.quantity;
               let fullName = `${customer.firstName} ${customer.lastName}`;
@@ -119,8 +120,10 @@ const CustomersPageComp = () => {
                     </th>
                     <td rowSpan={rowNum}>{customer.city}</td>
                     <td>
-                      <Link to={`/products/editProduct/${id}`}>
-                        {data.productAndPurchase[0]?.product.name}
+                      <Link
+                        to={`/products/editProduct/${firstProduct?._id}/${firstProduct?.name}`}
+                      >
+                        {firstProduct?.name}
                       </Link>
                     </td>
                     <td>{quantity && `x${quantity}`}</td>
@@ -138,7 +141,9 @@ const CustomersPageComp = () => {
                     return (
                       <tr key={index}>
                         <td>
-                          <Link to={`/products/editProduct/${product._id}`}>
+                          <Link
+                            to={`/products/editProduct/${product._id}/${product.name}`}
+                          >
                             {product.name}
                           </Link>
                         </td>
