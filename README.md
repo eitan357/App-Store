@@ -14,7 +14,9 @@ And you can search for purchases according to certain conditions.
 The app contains three main parts:
 
 .1. App Store - Based on React. Allows information to be used on the client side by intent pages that come from components.
+
 .2. API - Based on Node. Allows to receive and send the information to the database.
+
 .3. Database - form MongoDB Atlas.
 
 1. React - In this section there are several different modules that are in use:
