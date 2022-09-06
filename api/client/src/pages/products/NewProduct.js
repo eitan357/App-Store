@@ -17,8 +17,10 @@ const AddNewProduct = () => {
   let changeProduct = function (e) {
     e.preventDefault();
     let value = e.target.value;
+    console.log(value);
     let name = e.target.name;
-    let upperCase = value.charAt(0).toUpperCase() + value.slice(1);
+    let upperCase =
+      value.trim().charAt(0).toUpperCase() + value.trim().slice(1);
     let changedValue = name === "name" ? upperCase : Number(value);
     setProduct({ ...product, [name]: changedValue });
   };

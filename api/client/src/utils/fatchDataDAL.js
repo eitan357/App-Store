@@ -1,7 +1,5 @@
 import axios from "axios";
 
-//to Heroku url (didnt work with create function):
-//`https://apireactproject2022.herokuapp.com/api/${collection}`
 const url = "https://eitan-app-store.herokuapp.com/api/";
 
 const getAll = function (collection) {

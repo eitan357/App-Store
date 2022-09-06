@@ -39,7 +39,7 @@ const EditCustomerComp = () => {
 
   let changeData = function (e, data) {
     e.preventDefault();
-    let obj = e.target.value;
+    let obj = e.target.value.trim();
     let upperCase = obj.charAt(0).toUpperCase() + obj.slice(1);
     setPageData({
       ...pageData,

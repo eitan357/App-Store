@@ -16,9 +16,8 @@ const AddnewCustomer = () => {
 
   let changeCustomer = function (e) {
     e.preventDefault();
-    let obj = e.target.value;
-    let upperCase = obj.charAt(0).toUpperCase() + obj.slice(1).replace(" ", "");
-    console.log(upperCase);
+    let obj = e.target.value.trim();
+    let upperCase = obj.charAt(0).toUpperCase() + obj.slice(1);
     setCustomer({ ...customer, [e.target.name]: upperCase });
   };
 
