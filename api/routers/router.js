@@ -5,11 +5,11 @@ const router = express.Router();
 
 let collection;
 const setCollection = function (req, res, next) {
-  if (req.originalUrl === "/api/customers")
+  if (req.originalUrl.includes("/api/customers"))
     collection = require("../models/customersModule");
-  if (req.originalUrl === "/api/products")
+  if (req.originalUrl.includes("/api/products"))
     collection = require("../models/productsModule");
-  if (req.originalUrl === "/api/purchases")
+  if (req.originalUrl.includes("/api/purchases"))
     collection = require("../models/purchasesModule");
   next();
 };
