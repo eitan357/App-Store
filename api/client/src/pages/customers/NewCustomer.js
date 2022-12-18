@@ -21,6 +21,10 @@ const AddnewCustomer = () => {
     setCustomer({ ...customer, [e.target.name]: upperCase });
   };
 
+  let chackName = function () {
+    // validate dupliction antry
+  };
+
   let addCustomer = async function (e) {
     e.preventDefault();
     let customerData = customer;

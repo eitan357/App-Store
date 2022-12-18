@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://eitan-app-store.herokuapp.com/api/";
+const url = "https://localhost:8080/api/";
 
 const getAll = function (collection) {
   return axios.get(url + collection);
